@@ -10,6 +10,8 @@ jobs:
         run: echo "this is the test module"
       - name: This is the working user 
         run: hostname
+      - name: This is the timer
+        run: sleep 10
   job2:
     name: JOB2
     needs: job1
@@ -19,6 +21,8 @@ jobs:
         run: df -h
       - name: Test
         run: free -h
+      - name: This is the timer
+        run: sleep 5
 
   job3:
     name: JOB3
@@ -27,6 +31,8 @@ jobs:
     steps:
       - name: This is to test the 3rd release
         run: pwd
+      - name: This is the timer
+        run: sleep 7
 
   job4:
     name: JOB4
@@ -37,3 +43,4 @@ jobs:
         run: uptime
       - name: this case check
         run: ps -aef|grep 0
+      
