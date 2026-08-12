@@ -18,6 +18,7 @@ jobs:
       - name: sleep command 
         run: sleep 10
   job2:
+    name: JOB2
     runs-on: ubuntu-latest
     steps:
       - name: Checking the hostname
@@ -27,4 +28,21 @@ jobs:
           echo "this is the task to be done "
           uptime
           whoami
+  job3:
+    name: JOB3
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: job with single Dependency
+        run: sleep 10
+
+  job4:
+    name: JOB4
+    needs: [job1, job2, job3]
+    runs-on: ubuntu-latest
+    steps:
+      - name: job with multiple dependencies
+        run: sleep 10
+      - 
+    
           
