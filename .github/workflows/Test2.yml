@@ -22,7 +22,7 @@ jobs:
 
   job3:
     name: JOB3
-  #  needs: [job2, job1]
+    needs: [job2, job1]
     runs-on: ubuntu-latest
     steps:
       - name: This is to test the 3rd release
@@ -30,6 +30,7 @@ jobs:
 
   job4:
     name: JOB4
+    needs: job1
     runs-on: ubuntu-latest
     steps:
       - name: FINAL CASE
