@@ -15,4 +15,16 @@ jobs:
         run: df -h
       - name: checking the ram on the system
         run: free -h
-        
+      - name: sleep command 
+        run: sleep 10
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking the hostname
+        run: hostname
+      - name: running multiple commands 
+        run: 
+          echo "this is the task to be done "
+          uptime
+          whoami
+          
