@@ -3,6 +3,7 @@ on:
   schedule:
     - cron: "*/1 * * * *"
 
+
 jobs:
   job1:
     name: JOB1
