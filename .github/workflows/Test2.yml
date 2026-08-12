@@ -1,7 +1,7 @@
 name: Second-file
 on: 
   schedule:
-    - cron: "*/ * * * *"
+    - cron: "*/1 * * * *"
 
 jobs:
   job1:
