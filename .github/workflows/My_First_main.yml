@@ -1,3 +1,18 @@
 name: my-first-workflow
 #To get the workflow triggeered at every push
 on: push
+
+jobs:
+  job1:
+    name: JOB1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Running single command in JOB1
+        run: echo "Hi this is Hemant's workdlow"
+      - name: Checking for the release for the github hosted runner
+        run: cat /etc/os-release
+      - name: Checking the storage on the system 
+        run: df -h
+      - name: checking the ram on the system
+        run: free -h
+        
