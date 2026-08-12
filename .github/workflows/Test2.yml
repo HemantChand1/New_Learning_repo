@@ -1,4 +1,4 @@
-name: Second_file
+name: Second-file
 on: push
 
 jobs:
