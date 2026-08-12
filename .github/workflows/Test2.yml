@@ -1,5 +1,7 @@
 name: Second-file
-on: push
+on: 
+  schedule:
+    - cron: "*/ * * * *"
 
 jobs:
   job1:
