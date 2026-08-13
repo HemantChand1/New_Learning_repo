@@ -9,40 +9,16 @@ jobs:
     steps:
       - name: Running single command in JOB1
         run: echo "Hi this is Hemant's workdlow"
-      - name: Checking for the release for the github hosted runner
-        run: cat /etc/os-release
-      - name: Checking the storage on the system 
-        run: df -h
-      - name: checking the ram on the system
-        run: free -h
-      - name: sleep command 
-        run: sleep 10
-  job2:
-    name: JOB2
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checking the hostname
-        run: hostname
-      - name: running multiple commands 
-        run: 
-          echo "this is the task to be done "
-          uptime
-          whoami
-  job3:
-    name: JOB3
-    needs: job1
-    runs-on: ubuntu-latest
-    steps:
-      - name: job with single Dependency
-        run: sleep 10
+      - name: check1
+        run: |
+          pwd
+          ls -al
+          hostname
+      - name: Step 2 Checkout
+        uses: actions/checkout@v6.1.0
 
-  job4:
-    name: JOB4
-    needs: [job1, job2, job3]
-    runs-on: ubuntu-latest
-    steps:
-      - name: job with multiple dependencies
-        run: sleep 10
-      
-    
-          
+      - name: Step 3 Check
+        run: |
+          pwd
+          ls -al
+          hostname
