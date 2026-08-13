@@ -1,10 +1,7 @@
 name: my-first-workflow
 #To get the workflow triggeered at every push
 on: 
-  schedule:
-    - cron: "*/5 * * * *"
-  workflow_dispatch:
-  push:
+ push:
 jobs:
   job1:
     name: JOB1
