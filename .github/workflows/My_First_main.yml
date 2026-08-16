@@ -20,6 +20,7 @@ jobs:
 
       - name: Step 3 Check
         run: |
+          mkdir archive1
           pwd
           ls -al
           hostname
