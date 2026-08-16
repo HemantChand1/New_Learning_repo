@@ -23,3 +23,10 @@ jobs:
           pwd
           ls -al
           hostname
+          echo "this is the artifact" >> myfact.txt
+      - name: upload single file 
+        uses: actions/upload-artifact@v7
+        with:
+          name: single-file
+          path: ./myfact.txt
+          
