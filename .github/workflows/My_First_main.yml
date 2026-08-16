@@ -38,6 +38,7 @@ jobs:
          
   job2:
     name: JOB2
+    needs: job1
     runs-on: ubuntu-latest
     steps:
       - name: Checking the current directory
@@ -48,7 +49,7 @@ jobs:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v7.0.0
         with:
-          name: checking current directory post download
+          name: multiple path
       - name: checking current directory post download
         run: |
           pwd
