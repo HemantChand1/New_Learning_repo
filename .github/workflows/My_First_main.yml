@@ -27,9 +27,9 @@ jobs:
           echo "This is an aftifact file to be tested" >> archive1/mail.txt
           echo "This will be the 3rd file to be tested in this manner" >> archive1/main.txt
 
-      - name: upload artifact
-        uses: actions/upload-artifact@v7
-        with:
-          name: archiving 
-          path: archive1/
+#      - name: upload artifact
+#        uses: actions/upload-artifact@v7
+#        with:
+#          name: archiving 
+#          path: archive1/
           
