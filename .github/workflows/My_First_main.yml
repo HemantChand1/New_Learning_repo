@@ -25,8 +25,8 @@ jobs:
           ls -al
           hostname
           echo "this is the artifact" >> myfact.txt
-          echo "This is an aftifact file to be tested" >> archive1/mail.txt
-          echo "This will be the 3rd file to be tested in this manner" >> archive1/main.txt
+          echo "This is an aftifact file to be tested" >> archive1/mai1l.txt
+          echo "This will be the 3rd file to be tested in this manner" >> archive1/mai1n.txt
 
       - name: upload multiple artifact
         uses: actions/upload-artifact@v7
