@@ -30,6 +30,6 @@ jobs:
       - name: upload artifact folder
         uses: actions/upload-artifact@v7
         with:
-          name: archive
-          path: archive/
+          name: archiving 
+          path: archive1/
           
