@@ -39,7 +39,6 @@ jobs:
   job2:
     name: JOB2
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checking the current directory
         run: |
