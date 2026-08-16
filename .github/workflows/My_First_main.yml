@@ -24,9 +24,17 @@ jobs:
           ls -al
           hostname
           echo "this is the artifact" >> myfact.txt
-      - name: upload single file 
+          echo "This is an aftifact file to be tested" >> mail.txt
+          echo "This will be the 3rd file to be tested in this manner" >> main.txt
+#      - name: upload single file 
+#        uses: actions/upload-artifact@v7
+#        with:
+#          name: single-file
+#          path: ./myfact.txt
+
+      - name: upload artifact folder
         uses: actions/upload-artifact@v7
         with:
-          name: single-file
-          path: ./myfact.txt
+          name: multiple-file
+          path: ./ 
           
