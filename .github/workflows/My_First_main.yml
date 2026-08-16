@@ -36,3 +36,22 @@ jobs:
             ./myfact.txt
             archive1/
          
+  job2:
+    name: JOB2
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checking the current directory
+        run: |
+          pwd
+          ls -al
+
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v7.0.0
+        with:
+          name: checking current directory post download
+       - name: checking current directory post download
+         run: |
+           pwd
+           ls -al
+        
