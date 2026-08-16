@@ -50,8 +50,8 @@ jobs:
         uses: actions/download-artifact@v7.0.0
         with:
           name: checking current directory post download
-       - name: checking current directory post download
-         run: |
-           pwd
-           ls -al
+      - name: checking current directory post download
+        run: |
+          pwd
+          ls -al
         
