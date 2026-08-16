@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: multiple path
-          paths: |
+          path: |
             ./myfact.txt
             archive1/
          
