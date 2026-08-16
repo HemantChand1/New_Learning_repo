@@ -6,6 +6,7 @@ jobs:
   job1:
     name: JOB1
     runs-on: ubuntu-latest
+    
     steps:
       - name: Running single command in JOB1
         run: echo "Hi this is Hemant's workdlow"
