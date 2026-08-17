@@ -16,7 +16,7 @@ jobs:
           ls -al
           hostname
       - name: Step 2 Checkout
-        uses: actions/checkout@v6.1.0
+        uses: actions/checkout@v6.1.0 #git market place
 
       - name: Step 3 Check
         run: |
@@ -29,7 +29,7 @@ jobs:
           echo "This will be the 3rd file to be tested in this manner" >> archive1/mai1n.txt
 
       - name: upload multiple artifact
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v7  # git market place
         with:
           name: multiple_path
           path: |
@@ -47,9 +47,9 @@ jobs:
           ls -al
 
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v7.0.0
+        uses: actions/download-artifact@v7.0.0 #git market place
         with:
-          name: multiple_path
+          name: single_path
       - name: checking current directory post download
         run: |
           pwd
@@ -66,11 +66,43 @@ jobs:
           ls -al
 
       - name: Download directory
-        uses: actions/download-artifact@v7.0.0
+        uses: actions/download-artifact@v7.0.0 # git market place
         with:
           name: multiple_path
       - name: checking current directory post download
         run: |
           pwd
           ls -al
-        
+
+  job4:
+    name: JOB4
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Creating custome file and folder
+        run: |
+          mkdir single_file
+          mkdir download_directory
+      - name: Checking current directory
+        run: |
+          pwd
+          ls -al
+
+      - name: Download a single file Artifact
+        uses: actions/download-artifact@v7.0.0 #git market place
+        with:
+          name: single_path
+          path: single_file
+
+      - name: Download directory
+        uses: actions/download-artifact@v7.0.0 # git market place
+        with:
+          name: multiple_path
+          path: download_directory
+      - name: checking current directory post download
+        run: |
+          pwd
+          echo "this is the single file"
+          ls -al single_file
+          echo "this is the single directory"
+          ls -al download_directory
