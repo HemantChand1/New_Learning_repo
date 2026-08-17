@@ -3,8 +3,7 @@ name: my-first-workflow
 on: 
  push:
    branches: 
-    - dev
-    - 'feature-*' # this can be used for feature-1,2,3.....
+    - main
  pull_request:
    branches:
      - main
@@ -65,6 +64,6 @@ jobs:
           ls -al
 
       - name: Demo PR Test 
-        run: exit 1
+        run: exit 0
 
  
