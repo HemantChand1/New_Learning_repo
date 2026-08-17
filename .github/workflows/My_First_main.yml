@@ -2,6 +2,9 @@ name: my-first-workflow
 #To get the workflow triggeered at every push
 on: 
  push:
+   branches: 
+    - dev
+    - 'feature-*' # this can be used for feature-1,2,3.....
 jobs:
   job1:
     name: JOB1
@@ -29,15 +32,7 @@ jobs:
           echo "This will be the 3rd file to be tested in this manner" >> archive1/mai1n.txt
           echo "this is test" >> by.txt
 
-      - name: upload multiple artifact
-        uses: actions/upload-artifact@v7  # git market place
-        with:
-          name: multiple_path
-          path: |
-            ./myfact.txt
-            archive1/
-
-      - name: upload sincle_file
+      - name: upload single_file
         uses: actions/upload-artifact@v7  # git market place
         with:
           name: single_path
@@ -65,54 +60,4 @@ jobs:
           pwd
           ls -al
 
-  job3:
-    name: JOB3
-    needs: job1
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checking current directory
-        run: |
-          pwd
-          ls -al
-
-      - name: Download directory
-        uses: actions/download-artifact@v7.0.0 # git market place
-        with:
-          name: multiple_path
-      - name: checking current directory post download
-        run: |
-          pwd
-          ls -al
-
-  job4:
-    name: JOB4
-    needs: [job1, job2, job3]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Creating custome file and folder
-        run: |
-          mkdir single_file
-          mkdir download_directory
-      - name: Checking current directory
-        run: |
-          pwd
-          ls -al
-
-      - name: Download a single file Artifact
-        uses: actions/download-artifact@v7.0.0 #git market place
-        with:
-          name: single_path
-          path: single_file
-
-      - name: Download directory
-        uses: actions/download-artifact@v7.0.0 # git market place
-        with:
-          name: multiple_path
-          path: download_directory
-      - name: checking current directory post download
-        run: |
-          pwd
-          echo "this is the single file"
-          ls -al single_file
-          echo "this is the single directory"
-          ls -al download_directory
+ 
