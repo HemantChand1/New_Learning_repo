@@ -27,6 +27,7 @@ jobs:
           echo "this is the artifact" >> myfact.txt
           echo "This is an aftifact file to be tested" >> archive1/mai1l.txt
           echo "This will be the 3rd file to be tested in this manner" >> archive1/mai1n.txt
+          echo "this is test" >> by.txt
 
       - name: upload multiple artifact
         uses: actions/upload-artifact@v7  # git market place
@@ -35,7 +36,16 @@ jobs:
           path: |
             ./myfact.txt
             archive1/
+
+      - name: upload sincle_file
+        uses: actions/upload-artifact@v7  # git market place
+        with:
+          name: single_path
+          path: |
+            ./by.txt
+            
          
+
   job2:
     name: JOB2
     needs: job1
