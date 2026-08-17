@@ -49,7 +49,7 @@ jobs:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v7.0.0
         with:
-          name: multiple path
+          name: multiple_path
       - name: checking current directory post download
         run: |
           pwd
