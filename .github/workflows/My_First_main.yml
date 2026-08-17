@@ -31,7 +31,7 @@ jobs:
       - name: upload multiple artifact
         uses: actions/upload-artifact@v7
         with:
-          name: multiple path
+          name: multiple_path
           path: |
             ./myfact.txt
             archive1/
@@ -68,7 +68,7 @@ jobs:
       - name: Download directory
         uses: actions/download-artifact@v7.0.0
         with:
-          name: directory_archive1
+          name: multiple_path
       - name: checking current directory post download
         run: |
           pwd
