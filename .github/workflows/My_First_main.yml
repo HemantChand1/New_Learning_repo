@@ -5,6 +5,10 @@ on:
    branches: 
     - dev
     - 'feature-*' # this can be used for feature-1,2,3.....
+ pull_request:
+   branches:
+     - main
+     
 jobs:
   job1:
     name: JOB1
