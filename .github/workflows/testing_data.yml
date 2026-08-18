@@ -19,9 +19,9 @@ jobs:
           df -h
       - name: Adding files
         run: |
+          mkdir data
           echo "this is the testing for the 1st user " >> Temp.txt
           echo "this is a demo to test the release " >> data.txt
-          mkdir data
           echo "this is going to be ok in the folder" >> /data/ping.txt
       - name: upload single_files
         uses: actions/upload-artifact@v7 
