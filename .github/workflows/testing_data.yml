@@ -35,6 +35,20 @@ jobs:
       - name: Check the current files in the system
         run: |
           ls -la
+
+  job3:
+    name: JOB3
+    needs: [job1, job2]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: upload single_file
+        uses: actions/upload-artifact@v7 
+      - name: checking the data 
+        run: | 
+          pwd
+          ls -al
+          
  #         cd ./data/  
  #     - name: This is to add file in the folder
  #       run: echo "This is the data check" >> /data/base.txt
