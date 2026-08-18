@@ -22,6 +22,7 @@ jobs:
           echo "this is the testing for the 1st user " >> Temp.txt
           echo "this is a demo to test the release " >> data.txt
           mkdir data
+          echo "this is going to be ok in the folder" >> /data/ping.txt
       - name: upload single_files
         uses: actions/upload-artifact@v7 
         with:
@@ -49,6 +50,7 @@ jobs:
       - name: Check the current files in the system
         run: |
           ls -la
+          pwd
 
   job3:
     name: JOB3
