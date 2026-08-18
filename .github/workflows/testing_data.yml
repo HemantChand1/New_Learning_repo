@@ -1,0 +1,25 @@
+name: testing-data
+
+on: 
+  push
+  
+
+jobs:
+  job1:
+    name: JOB1
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: This is the First test
+        run: echo "This is the testing process"
+      - name: data background
+        run: |
+          pwd
+          ls -al
+          df -h
+  
+
+  
+
+
+      
