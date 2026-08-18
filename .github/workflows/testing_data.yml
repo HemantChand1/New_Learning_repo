@@ -36,7 +36,8 @@ jobs:
           
         with:
           name: folder_path
-          path: /data/
+          path: 
+            ./data/
     
   job2:
     name: JOB2
