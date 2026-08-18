@@ -32,7 +32,7 @@ jobs:
       - name: Check the current files in the system
         run: ls -la
       - name: This is to add file in the folder
-        run: echo "This is the data check" >> ./data/base.txt
+        run: echo "This is the data check" >> /data/base.txt
 
          
   
