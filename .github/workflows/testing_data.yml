@@ -58,18 +58,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: upload single_file
-        uses: actions/upload-artifact@v7 
+      - name: Download a Build Artifact1
+        uses: actions/download-artifact@v7.0.0 #git market place
         with:
           name: Single-files
-          path: |
-            ./Temp.txt
-            ./data.txt
-            
-      - name: checking the data 
-        run: | 
+      - name: Download a Build Artifact2
+        uses: actions/download-artifact@v7.0.0 #git market place
+        with:         
+          name: folder_path
+      - name: checking current directory post download
+        run: |
           pwd
           ls -al
+            
+
           
  #         cd ./data/  
  #     - name: This is to add file in the folder
