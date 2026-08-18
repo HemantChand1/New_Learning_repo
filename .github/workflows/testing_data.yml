@@ -30,7 +30,9 @@ jobs:
 
     steps:
       - name: Check the current files in the system
-        run: ls -la
+        run: |
+          ls -la
+          cd ./data/  
       - name: This is to add file in the folder
         run: echo "This is the data check" >> /data/base.txt
 
