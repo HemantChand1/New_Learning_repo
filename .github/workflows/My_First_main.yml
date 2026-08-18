@@ -7,7 +7,12 @@ on:
  pull_request:
    branches:
      - main
-     
+env:
+  ENV_TYPE: demo
+  APP_USER: arun
+  APP_PORT: 80
+  
+
 jobs:
   job1:
     name: JOB1
@@ -41,7 +46,7 @@ jobs:
           name: single_path
           path: |
             ./by.txt
-            
+
          
 
   job2:
@@ -62,6 +67,12 @@ jobs:
         run: |
           pwd
           ls -al
+
+      - name: Refering the environment variable 
+        run: |
+         echo "[INFO] We are currently on envidonment - $ENV_TYPE and logged in with user $APP_USER"
+         echo "[INFO] The application is running on port $APP_PORT    
+
 
       - name: Demo PR Test 
         run: exit 0
