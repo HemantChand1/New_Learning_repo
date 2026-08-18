@@ -71,7 +71,7 @@ jobs:
       - name: Refering the environment variable 
         run: |
          echo "[INFO] We are currently on envidonment - $ENV_TYPE and logged in with user $APP_USER"
-         echo "[INFO] The application is running on port $APP_PORT    
+         echo "[INFO] The application is running on port $APP_PORT"    
 
 
       - name: Demo PR Test 
