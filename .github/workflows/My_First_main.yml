@@ -74,8 +74,7 @@ jobs:
          echo "[INFO] The application is running on port $APP_PORT"    
       
       - name: Refring to the sectets 
-        run: |
-          echo "[INFO] We refer to the secret in this case by - ${{ secrets.APP_PASSWD_DEMO }}"
+        run: echo "[INFO] We refer to the secret in this case by - ${{ secrets.APP_PASSWD_DEMO }}"
 
       - name: Demo PR Test 
         run: exit 0
