@@ -22,14 +22,20 @@ jobs:
           echo "this is the testing for the 1st user " >> Temp.txt
           echo "this is a demo to test the release " >> data.txt
           mkdir data
-      - name: upload single_file
+      - name: upload single_files
         uses: actions/upload-artifact@v7 
         with:
           name: Single-files
           path: |
             ./Temp.txt
             ./data.txt
+
+      - name: upload Folder
+        uses: actions/upload-artifact@v7 
           
+        with:
+          name: folder_path
+          path: /data/
     
   job2:
     name: JOB2
