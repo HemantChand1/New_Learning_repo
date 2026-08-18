@@ -71,9 +71,37 @@ jobs:
         run: |
           pwd
           ls -al
-            
 
-          
+
+  job4:
+    name: JOB4
+    needs: [job1, job2, job3]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: This is to downlod the repo files we created 
+        uses: actions/download-artifact@v8
+        with:
+          name: Single-files
+
+      - name: Download a Build Artifact2
+        uses: actions/download-artifact@v8
+        with:
+          name: folder_path
+  
+  job5:
+    name: JOB5
+    needs: [job1, job2, job3, job4]
+    runs-on: ubuntu-latest
+    steps:
+      - name: this is to checkout 
+        uses: actions/checkout@v6.1.0
+
+      - name: Check the current files in the system
+        run: |
+          ls -la
+          pwd
+
  #         cd ./data/  
  #     - name: This is to add file in the folder
  #       run: echo "This is the data check" >> /data/base.txt
