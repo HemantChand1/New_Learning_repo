@@ -17,8 +17,24 @@ jobs:
           pwd
           ls -al
           df -h
-  
+      - name: Adding files
+        run: |
+          echo "this is the testing for the 1st user " >> Temp.txt
+          echo "this is a demo to test the release " >> data.txt
+          mkdir data
+    
+  job2:
+    name: JOB2
+    needs: job1
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Check the current files in the system
+        run: ls -la
+      - name: This is to add file in the folder
+        run: echo "This is the data check" >> ./data/base.txt
+
+         
   
 
 
