@@ -3,10 +3,8 @@ name: my-first-workflow
 on: 
  push:
    branches: 
-    - main
- pull_request:
-   branches:
-    - main
+    - dev
+
      
 env:
   ENV_TYPE: demo
