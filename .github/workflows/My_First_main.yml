@@ -93,6 +93,5 @@ jobs:
           echo "[INFO] This is for changes added by : ${{ github.actor }} and in ${{ github.ref_name }} branch "
           echo "[INFO] This is for the current step is running on : ${{ runner.os }}"
           echo "[INFO] To check the current run ID : ${{ JOB.check_run_id }}"
-          
-      - background: 
+    
  
