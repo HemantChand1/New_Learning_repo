@@ -78,6 +78,7 @@ jobs:
       - name: Refring to the sectets 
         run: echo "[INFO] We refer to the secret in this case by - ${{ secrets.APP_PASSWD_DEMO }}"
 
+
       - name: Demo PR Test 
         run: exit 0
         
