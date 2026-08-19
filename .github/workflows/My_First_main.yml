@@ -3,14 +3,15 @@ name: my-first-workflow
 on: 
  push:
    branches: 
-    - main
+    - dev
  pull_request:
    branches:
-     - main
+     - dev
 env:
   ENV_TYPE: demo
   APP_USER: arun
   APP_PORT: 80
+
   
 
 jobs:
