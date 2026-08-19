@@ -84,7 +84,7 @@ jobs:
   job3:
     name: JOB3
     needs: [job1, job2]
-    runs-on: ubuntu-late
+    runs-on: ubuntu-latest
 
     steps:
       - name: Running github defined variables 
