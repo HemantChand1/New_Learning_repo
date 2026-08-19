@@ -13,8 +13,6 @@ env:
   APP_USER: arun
   APP_PORT: 80
 
-  
-
 jobs:
   job1:
     name: JOB1
