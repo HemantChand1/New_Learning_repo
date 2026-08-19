@@ -78,5 +78,19 @@ jobs:
 
       - name: Demo PR Test 
         run: exit 0
+        
+  job3:
+    name: JOB3
+    needs: [job1, job2]
+    runs-on: ubuntu-late
 
+    steps:
+      - name: Running github defined variables 
+        run: |
+          echo "[INFO] This is to test which repo we are in : ${{ github.event_name }} "
+          echo "[INFO] This is for changes added by : ${{ github.actor }} and in ${{ github.ref_name }} branch "
+          echo "[INFO] This is for the current step is running on : ${{ runner.os }}"
+          echo "[INFO] To check the current run ID : ${{ JOB.check_run_id }}"
+          
+      - background: 
  
