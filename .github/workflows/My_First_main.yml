@@ -48,7 +48,6 @@ jobs:
             ./by.txt
 
          
-
   job2:
     name: JOB2
     needs: job1
