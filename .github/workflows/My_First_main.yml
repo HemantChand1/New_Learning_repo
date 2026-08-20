@@ -1,9 +1,7 @@
 name: my-first-workflow
 #To get the workflow triggeered at every push
-on: 
- push:
-   branches: 
-    - dev
+on: push
+
 
      
 env:
