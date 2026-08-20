@@ -9,6 +9,11 @@ tasks = [
 ]
 
 
+def get_next_id():
+    """Generate a unique ID that won't collide after deletions."""
+    return max((t["id"] for t in tasks), default=0) + 1
+
+
 # ─────────────────────────────────────────
 # GET  /          → Welcome message
 # ─────────────────────────────────────────
@@ -36,7 +41,7 @@ def add_task():
         return jsonify({"error": "Title is required"}), 400
 
     new_task = {
-        "id":    len(tasks) + 1,
+        "id":    get_next_id(),
         "title": data["title"],
         "done":  False
     }
