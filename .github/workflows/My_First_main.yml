@@ -84,3 +84,25 @@ jobs:
            echo "[INFO] This is for changes added by : ${{ github.actor }} and in ${{ github.ref_name }} branch "
            echo "[INFO] This is for the current step is running on : ${{ runner.os }}"
            echo "[INFO] To check the current run ID : ${{ JOB.check_run_id }}"
+
+  staging:
+    name: Staging_deployment
+    runs_on: ubuntu-latest
+    steps:
+      - name: Staging Deployment test 
+        run: echo "[INFO] The staging portal is : ${{ vars.HOST }} and the user is : ${{ vars.USER }}"
+      - name: Refering staging environment Secret    
+        run: echo "[INFO] The password for : ${{ vars.USER }} is ${{ secrets.PASSWORD }}"
+    Environment:
+      name: Staging
+
+    Production:
+    name: Production_deployment
+    runs_on: ubuntu-latest
+    steps:
+      - name: Production Deployment test 
+        run: echo "[INFO] The staging portal is : ${{ vars.HOST }} and the user is : ${{ vars.USER }}"
+      - name: Refering production environment Secret    
+        run: echo "[INFO] The password for : ${{ vars.USER }} is ${{ secrets.PASSWORD }}"
+    Environment:
+      name: Production
