@@ -87,22 +87,22 @@ jobs:
 
   staging:
     name: Staging_deployment
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Staging Deployment test 
-        run: echo "[INFO] The staging portal is : ${{ vars.HOST }} and the user is : ${{ vars.USER }}"
+        run: echo "[INFO] The staging portal is ${{ vars.HOST }} and the user is ${{ vars.USER }}"
       - name: Refering staging environment Secret    
-        run: echo "[INFO] The password for : ${{ vars.USER }} is ${{ secrets.PASSWORD }}"
-    Environment:
+        run: echo "[INFO] The password for  ${{ vars.USER }} is ${{ secrets.PASSWORD }}"
+    environment:
       name: Staging
 
-    Production:
+  production:
     name: Production_deployment
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Production Deployment test 
-        run: echo "[INFO] The staging portal is : ${{ vars.HOST }} and the user is : ${{ vars.USER }}"
+        run: echo "[INFO] The staging portal is  ${{ vars.HOST }} and the user is  ${{ vars.USER }}"
       - name: Refering production environment Secret    
-        run: echo "[INFO] The password for : ${{ vars.USER }} is ${{ secrets.PASSWORD }}"
-    Environment:
+        run: echo "[INFO] The password for  ${{ vars.USER }} is ${{ secrets.PASSWORD }}"
+    environment:
       name: Production
