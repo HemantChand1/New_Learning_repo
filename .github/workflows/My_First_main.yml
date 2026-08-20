@@ -1,9 +1,7 @@
 name: my-first-workflow
 #To get the workflow triggeered at every push
 on: push
-
-
-     
+   
 env:
   ENV_TYPE: demo
   APP_USER: arun
