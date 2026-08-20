@@ -3,7 +3,7 @@ name: my-first-workflow
 on: 
  push:
    branches: 
-    - dev
+    - main
 
      
 env:
